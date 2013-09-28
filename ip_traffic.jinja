@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        {# Print flash messages #}
+        <div class="row">
+            <div class="col-lg-2"></div>
+                <div class="col-lg-7">
+                    <div data-spy="affix" class="top-fixed" id="messages">
+                        {%if messages%}
+                            {%for level in messages.keys()%}
+                                {%for message in messages[level]%}
+                                    <div class="alert alert-{{level}} affix col-lg-7">
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                        {{message}}</div>
+                                {%endfor%}
+                            {%endfor%}
+                        {%endif%}
+                    </div>
+                </div>
+            <div class="col-lg-3"></div>
+        </div>
+        {% if ips%}
+        <table class="table">
+            <tbody>
+                {%for ip in ips%}
+                <tr><td><img src="{{dir}}/{{ip}}.png"></td></tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        {%endif%}
+        {%block content%}{%endblock%}
+        {%block scripts%}{%endblock%}
+    </body>
+</html>
+
