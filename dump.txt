@@ -1,0 +1,52 @@
+libxt_ACCOUNT_cl userspace accounting tool v1.3
+
+Showing table: net-loc
+Run #0 - 5 items found
+IP: 192.168.3.178 SRC packets: 12 bytes: 512 DST packets: 0 bytes: 0
+IP: 192.168.11.105 SRC packets: 144 bytes: 153778 DST packets: 89 bytes: 26766
+IP: 192.168.11.178 SRC packets: 160 bytes: 32064 DST packets: 174 bytes: 32396
+IP: 192.168.11.190 SRC packets: 40753 bytes: 19896697 DST packets: 56410 bytes: 51875684
+IP: 192.168.13.117 SRC packets: 277 bytes: 111150 DST packets: 319 bytes: 38551
+Finished.
+
+libxt_ACCOUNT_cl userspace accounting tool v1.3
+
+Showing table: net-loc
+Run #0 - 36 items found
+IP: 192.168.3.126 SRC packets: 7 bytes: 280 DST packets: 0 bytes: 0
+IP: 192.168.3.144 SRC packets: 2 bytes: 80 DST packets: 0 bytes: 0
+IP: 192.168.3.178 SRC packets: 40 bytes: 1632 DST packets: 0 bytes: 0
+IP: 192.168.3.192 SRC packets: 1 bytes: 40 DST packets: 0 bytes: 0
+IP: 192.168.3.199 SRC packets: 216 bytes: 8640 DST packets: 0 bytes: 0
+IP: 192.168.3.200 SRC packets: 7 bytes: 280 DST packets: 0 bytes: 0
+IP: 192.168.3.208 SRC packets: 3 bytes: 376 DST packets: 0 bytes: 0
+IP: 192.168.3.226 SRC packets: 16 bytes: 832 DST packets: 0 bytes: 0
+IP: 192.168.10.102 SRC packets: 11981 bytes: 2690519 DST packets: 16951 bytes: 16861965
+IP: 192.168.10.125 SRC packets: 42605 bytes: 4780551 DST packets: 54017 bytes: 54880695
+IP: 192.168.10.128 SRC packets: 92545 bytes: 14155471 DST packets: 81405 bytes: 63315548
+IP: 192.168.10.167 SRC packets: 508233 bytes: 25410377 DST packets: 696992 bytes: 1018299913
+IP: 192.168.10.205 SRC packets: 12297 bytes: 2352366 DST packets: 14589 bytes: 11935869
+IP: 192.168.10.216 SRC packets: 118878 bytes: 15372729 DST packets: 127313 bytes: 24255782
+IP: 192.168.10.220 SRC packets: 271787 bytes: 19292767 DST packets: 335705 bytes: 128813297
+IP: 192.168.11.105 SRC packets: 29982 bytes: 4324707 DST packets: 28920 bytes: 21223646
+IP: 192.168.11.118 SRC packets: 0 bytes: 0 DST packets: 8639 bytes: 6561474
+IP: 192.168.11.162 SRC packets: 44060 bytes: 12956176 DST packets: 42018 bytes: 31859298
+IP: 192.168.11.175 SRC packets: 15163 bytes: 2914273 DST packets: 19435 bytes: 18848946
+IP: 192.168.11.178 SRC packets: 2163991 bytes: 715171982 DST packets: 3153211 bytes: 3879384606
+IP: 192.168.11.179 SRC packets: 423 bytes: 458577 DST packets: 313 bytes: 153943
+IP: 192.168.11.181 SRC packets: 8611 bytes: 1135914 DST packets: 11332 bytes: 11378177
+IP: 192.168.11.182 SRC packets: 11376 bytes: 2107351 DST packets: 12870 bytes: 10626819
+IP: 192.168.11.189 SRC packets: 84164 bytes: 12987689 DST packets: 86768 bytes: 75934116
+IP: 192.168.11.190 SRC packets: 7662796 bytes: 3820362882 DST packets: 8519856 bytes: 2633068543
+IP: 192.168.11.191 SRC packets: 9360 bytes: 1625467 DST packets: 12147 bytes: 11678914
+IP: 192.168.11.192 SRC packets: 35411 bytes: 4660332 DST packets: 23088 bytes: 19196793
+IP: 192.168.13.117 SRC packets: 59041 bytes: 11630773 DST packets: 69234 bytes: 47267841
+IP: 192.168.13.122 SRC packets: 26252 bytes: 5139266 DST packets: 34627 bytes: 30018508
+IP: 192.168.13.161 SRC packets: 72151 bytes: 27138586 DST packets: 75586 bytes: 30735062
+IP: 192.168.13.163 SRC packets: 40717 bytes: 7038746 DST packets: 45539 bytes: 39667542
+IP: 192.168.13.164 SRC packets: 50620 bytes: 6483715 DST packets: 63065 bytes: 60882161
+IP: 192.168.13.169 SRC packets: 313 bytes: 16119 DST packets: 0 bytes: 0
+IP: 192.168.13.173 SRC packets: 23655 bytes: 3608729 DST packets: 20173 bytes: 14897057
+IP: 192.168.13.232 SRC packets: 33212 bytes: 4744485 DST packets: 30805 bytes: 25158243
+IP: 192.168.13.250 SRC packets: 155629 bytes: 20897310 DST packets: 179964 bytes: 130455180
+
