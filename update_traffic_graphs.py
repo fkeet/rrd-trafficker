@@ -118,6 +118,6 @@ context = {
         'dir': TARGET_DIRECTORY,
     }
 content = template.render(context)
-index_file = open(target_index, 'w')
+index_file = open(os.path.join(TARGET_DIRECTORY, target_index), 'w')
 index_file.write(content)
 index_file.close()
