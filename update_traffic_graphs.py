@@ -33,57 +33,61 @@ while line:
                 "DS:input:COUNTER:%s:U:U" % str(heartbeat),
                 "DS:output:COUNTER:%s:U:U" % str(heartbeat),
                 "RRA:AVERAGE:0.5:1:600",
-                "RRA:AVERAGE:0.5:12:24",
-                "RRA:AVERAGE:0.5:288:7",
-                "RRA:AVERAGE:0.5:2016:30",
-                "RRA:AVERAGE:0.5:60480:12",
-                "RRA:MAX:0.5:12:24",
-                "RRA:MAX:0.5:288:7",
-                "RRA:MAX:0.5:2016:30",
-                "RRA:MAX:0.5:60480:12",
+                "RRA:AVERAGE:0.5:12:240",
+                "RRA:AVERAGE:0.5:288:70",
+                "RRA:AVERAGE:0.5:2016:70",
+                "RRA:AVERAGE:0.5:60480:120",
+                "RRA:MAX:0.5:12:240",
+                "RRA:MAX:0.5:288:70",
+                "RRA:MAX:0.5:2016:300",
+                "RRA:MAX:0.5:60480:120",
                 )
 
         # Update the file with the new data
-        traffic_in = 0
-        traffic_out = 0
-        import random
-        traffic_in += random.randrange(1000, 1500)
-        traffic_out += random.randrange(1000, 3000)
-        print(filename, 'N:' + str(traffic_in) + ':' + str(traffic_out))
+        # traffic_in = 0
+        # traffic_out = 0
+        # import random
+        # traffic_in += random.randrange(1000, 1500)
+        # traffic_out += random.randrange(1000, 3000)
+        # print(filename, 'N:' + str(traffic_in) + ':' + str(traffic_out))
 
         ret = rrdtool.update(filename,
             'N:' + str(traffic_in) + ':' + str(traffic_out))
         if ret:
             print rrdtool.error()
 
+        in_area_color = '0018CDbb'
+        in_line_color = 'A0A0A0ff'
+        out_area_color = '8F480099'
+        out_line_color = 'a05050a0'
+        over_line_color = '00FF0099'
         rrdtool.graph(filename + '.png',
             '--imgformat', 'PNG',
             '--width', '540',
-            '--height', '100',
-            '--start', "end-300s",
+            '--height', '150',
+            '--start', "end-500",
             '--end', "now",
             '--vertical-label', 'Bytes/Second',
             '--title', 'Traffic for %s' % ip,
             '--lower-limit', '0',
+            '--color', 'BACK#F0F0D000', '--color', 'CANVAS#F0F0D000',
+            '--color', 'SHADEA#F0F0D000', '--color', 'SHADEB#F0F0D000',
+            '--color', 'GRID#E0E0E0AA',
             'DEF:in_bytes=%s:input:AVERAGE' % filename,
             'DEF:out_bytes=%s:output:AVERAGE' % filename,
-            'AREA:in_bytes#990033:Download',
-            'LINE1:out_bytes#990033:Upload',
-            )
-        ret = rrdtool.graph("net.png",
-            "--start", "end-1h", "--vertical-label=Bytes/s",
-            "DEF:inoctets=%s:input:AVERAGE" % filename,
-            "DEF:outoctets=%s:output:AVERAGE" % filename,
-            "AREA:inoctets#00FF00:In traffic",
-            "LINE1:outoctets#0000FF:Out traffic\\r",
-            "CDEF:inbits=inoctets,8,*",
-            "CDEF:outbits=outoctets,8,*",
+            'CDEF:in_mb=in_bytes,1000000,/',
+            'AREA:in_mb#%s:Download' % in_area_color,
+            'LINE1:in_mb#%s' % in_line_color,
+            'HRULE:10000#%s' % over_line_color,
+            'CDEF:out_mb=out_bytes,1000000,/',
+            'AREA:out_mb#%s:Upload' % out_area_color,
+            'LINE1:out_mb#%s' % out_line_color,
             "COMMENT:\\n",
-            "GPRINT:inbits:AVERAGE:Avg In traffic\: %6.2lf %Sbps",
+            "GPRINT:in_mb:AVERAGE:Avg In traffic\: %6.2lf MBps",
             "COMMENT:  ",
-            "GPRINT:inbits:MAX:Max In traffic\: %6.2lf %Sbps\\r",
-            "GPRINT:outbits:AVERAGE:Avg Out traffic\: %6.2lf %Sbps",
+            "GPRINT:in_mb:MAX:Max In traffic\: %6.2lf MBps\\r",
+            "GPRINT:out_mb:AVERAGE:Avg Out traffic\: %6.2lf MBps",
             "COMMENT: ",
-            "GPRINT:outbits:MAX:Max Out traffic\: %6.2lf %Sbps\\r")
+            "GPRINT:out_mb:MAX:Max Out traffic\: %6.2lf MBps\\r")
 
     line = sys.stdin.readline()
