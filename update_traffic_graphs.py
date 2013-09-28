@@ -67,12 +67,12 @@ def graph_traffic_for_ip(filename, duration='1h'):
         'AREA:out_mb#%s:Upload' % out_area_color,
         'LINE1:out_mb#%s' % out_line_color,
         "COMMENT:\\n",
-        "GPRINT:in_mb:AVERAGE:Avg In traffic\: %6.2lf MBps",
+        "GPRINT:in_mb:AVERAGE:Avg In traffic\: %6.2lf Bps",
         "COMMENT:  ",
-        "GPRINT:in_mb:MAX:Max In traffic\: %6.2lf MBps\\r",
-        "GPRINT:out_mb:AVERAGE:Avg Out traffic\: %6.2lf MBps",
+        "GPRINT:in_mb:MAX:Max In traffic\: %6.2lf Bps\\r",
+        "GPRINT:out_mb:AVERAGE:Avg Out traffic\: %6.2lf Bps",
         "COMMENT: ",
-        "GPRINT:out_mb:MAX:Max Out traffic\: %6.2lf MBps\\r")
+        "GPRINT:out_mb:MAX:Max Out traffic\: %6.2lf Bps\\r")
 
 
 line = sys.stdin.readline()
